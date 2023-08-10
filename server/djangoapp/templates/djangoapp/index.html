@@ -32,10 +32,10 @@
                       <li class="nav-item">
                         <a class="nav-link text-light" href="{% url 'djangoapp:contact' %}">Contact Us</a>
                       </li>
-                        {% if user.is_autenticated %}
+                      {% if user.is_authenticated %}
                         <li>
                             <a class="btn btn-link" href="#">{{ user.first_name }}({{ user.username }})</a>
-                            <a class="btn btn-link" href="#">Logout</a>
+                            <a class="btn btn-link" href="{% url 'djangoapp:logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li>
