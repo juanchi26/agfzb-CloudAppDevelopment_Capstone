@@ -12,7 +12,7 @@ import json
 # - Any other fields you would like to include in car make model
 # - __str__ method to print a car make object
 class CarMake(models.Model):
-    name = models.CharField(null=False, max_length=100, default='')
+    name = models.CharField(null=False, max_length=100, default='undefined')
     description = models.CharField(max_length=2000, null=True)
 
     def __str__(self):
@@ -40,7 +40,7 @@ class CarModel(models.Model):
         (WAGON, 'Wagon'),
     ]
 
-    car_type = models.CharField(null=False, max_length=20, choices=type_choices, default=SEDAN)
+    car_type = models.CharField(null=False, max_length=20, choices=type_choices, default=WAGON)
     year = models.DateField(null=True)
 
     def __str__(self):
